@@ -26,3 +26,15 @@ if is_valid_affine(a,b):
     print("Ciphertext:",ciphertext)
 else:
     print("Invalid values of a and/or b.")
+
+
+def encrypt_affine(msg, a, b):
+    def gcd(a, b):
+        return a if b==0 else gcd(b, a%b)
+    def is_coprime(a, b):
+        return gcd(a, b) == 1
+    if not (is_coprime(a, 26) and 0 <= b < 26):
+        return "Invalid values of a and/or b."
+    return ''.join(chr((a*(ord(c.upper())-ord('A'))+b)%26 + ord('A')) if c.isalpha() else c for c in msg)
+msg = input("Enter the plain text: ")
+print("Ciphertext:", encrypt_affine(msg, 5, 7))
