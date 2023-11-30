@@ -1,20 +1,20 @@
 P="ceaser cipher example"
-lst1= []
+alphabet= []
 plaintext= []
 for i in range(97,123):
-    lst1.append(chr(i))
-print(lst1)
+    alphabet.append(chr(i))
+print(alpahbet)
 k=[]
-for j in lst1:
-    k.append(lst1.index(j))
+for j in alphabet:
+    k.append(alphabet.index(j))
 print(k)
 for i in P:
-    if i in lst1:
-        print(lst1.index(i))
-        plaintext.append(lst1.index(i))
+    if i in alphabet:
+        print(alphabet.index(i))
+        plaintext.append(alphabet.index(i))
 print(plaintext)
 cipher=[x+1 for x in plaintext]
 print(cipher)
 for m in cipher:
     if m in k:
-        print(lst1[m],end="")
+        print(alphabet[m],end="")
