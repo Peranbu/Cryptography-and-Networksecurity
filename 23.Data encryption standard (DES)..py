@@ -19,8 +19,6 @@ def hex2bin(s):
 	for i in range(len(s)):
 		bin = bin + mp[s[i]]
 	return bin
-
-
 def bin2hex(s):
 	mp = {"0000": '0',
 		"0001": '1',
@@ -46,13 +44,8 @@ def bin2hex(s):
 		ch = ch + s[i + 2]
 		ch = ch + s[i + 3]
 		hex = hex + mp[ch]
-
 	return hex
-
-
-
 def bin2dec(binary):
-
 	binary1 = binary
 	decimal, i, n = 0, 0, 0
 	while(binary != 0):
@@ -61,9 +54,6 @@ def bin2dec(binary):
 		binary = binary//10
 		i += 1
 	return decimal
-
-
-
 def dec2bin(num):
 	res = bin(num).replace("0b", "")
 	if(len(res) % 4 != 0):
@@ -73,16 +63,11 @@ def dec2bin(num):
 		for i in range(0, counter):
 			res = '0' + res
 	return res
-
-
-
 def permute(k, arr, n):
 	permutation = ""
 	for i in range(0, n):
 		permutation = permutation + k[arr[i] - 1]
 	return permutation
-
-
 def shift_left(k, nth_shifts):
 	s = ""
 	for i in range(nth_shifts):
@@ -92,8 +77,6 @@ def shift_left(k, nth_shifts):
 		k = s
 		s = ""
 	return k
-
-
 def xor(a, b):
 	ans = ""
 	for i in range(len(a)):
@@ -102,7 +85,6 @@ def xor(a, b):
 		else:
 			ans = ans + "1"
 	return ans
-
 initial_perm = [58, 50, 42, 34, 26, 18, 10, 2,
 				60, 52, 44, 36, 28, 20, 12, 4,
 				62, 54, 46, 38, 30, 22, 14, 6,
@@ -176,8 +158,6 @@ final_perm = [40, 8, 48, 16, 56, 24, 64, 32,
 			35, 3, 43, 11, 51, 19, 59, 27,
 			34, 2, 42, 10, 50, 18, 58, 26,
 			33, 1, 41, 9, 49, 17, 57, 25]
-
-
 def encrypt(pt, rkb, rk):
 	pt = hex2bin(pt)
 	pt = permute(pt, initial_perm, 64)
