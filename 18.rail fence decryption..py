@@ -1,6 +1,5 @@
 def sequence(n):
     return list(range(n)) + list(range(n - 1, 0, -1))
-
 def railfence(cipher_text, n):
     cipher_text = cipher_text.lower()
     L = sequence(n)
@@ -16,7 +15,6 @@ def railfence(cipher_text, n):
         temp1[k] = n
         plain_text += cipher_text[k]
     print("The cipher text is: ", plain_text)
-
 cipher_text = "horel ollwd"
 n = 3
 railfence(cipher_text, n)
